@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+
+</head>
+<body>
+    <nav>
+        <ul class="col-12 d-flex justify-content-around mb-0 p-3 bg-dark text-white">
+            <li class="p-2">
+                <ion-icon name="planet-outline"></ion-icon>
+            </li>
+            <li class="p-2">
+                ovo
+            </li>
+            <li class="p-2">
+               radi
+            </li>
+        </ul>
+    </nav>
+    <main>
+        <header class="col-12 vh-100 d-flex justify-content-around flex-column flex-lg-row">
+            <div class="col-12 col-lg-3 text-uppercase d-flex align-items-center p-4 position-relative">
+                <div class="sun" id="sun"></div>
+                <span class="title">picture of the day</span> 
+            </div>
+            <div class="col-12 col-lg-3 d-flex align-items-center justify-content-center">
+                <img src="/images/img1.png" alt="mars" class="mars">
+                <a href="#sec">
+                    <button class="learn-more" id="btn">
+                        <span class="circle" aria-hidden="true">
+                        <span class="icon arrow"></span>
+                        </span>
+                        <span class="button-text">Let's go</span>
+                    </button>
+                </a>
+            </div>
+        </header>
+        <section class="col-12 d-flex justify-content-center position-relative" id="sec">
+            <div class="glass col-10 p-3 text-center">
+                    <img src="" alt="" class="col-12 p-3" id="img1">
+            </div>
+            <div class="jupiter" id="jupiter"></div>
+        </section>
+        <section class="col-12 d-flex flex-column flex-lg-row">
+            <div class="calendar glass col-12 col-sm-9 col-lg-6 col-xl-5 col-xxl-3 my-5 p-2 mx-auto">
+                <div class="calendar-header d-flex align-items-center justify-content-between p-2">
+                    <span class="month-picker px-2" id="month-picker"></span>
+                    <div class="year-picker d-flex align-items-center">
+                        <span class="year-change d-grid pt-3" id="prev-year">
+                            <pre><</pre>
+                        </span>
+                        <span id="year"></span>
+                        <span class="year-change d-grid pt-3" id="next-year">
+                            <pre>></pre>
+                        </span>
+                    </div>
+                </div>
+                <div class="calendar-body p-2">
+                    <div class="calendar-week-day d-grid">
+                        <div>Sun</div>
+                        <div>Mon</div>
+                        <div>Tue</div>
+                        <div>Wed</div>
+                        <div>Thu</div>
+                        <div>Fri</div>
+                        <div>Sat</div>
+                    </div>
+                    <div class="calendar-days d-grid"></div>
+                </div>
+                <div class="month-list d-grid position-absolute col-12 h-100 top-0"></div>
+            </div>
+            <div class="col-10 glass glass-img col-lg-6 my-5 mx-auto">
+                <img src="" alt="" class="col-12 p-3" id="img2">
+            </div>
+        </section>
+        <footer class="text-center text-white bg-dark">
+            <div class="container">
+              <section class="mt-5 bg-dark">
+                <div class="row text-center d-flex justify-content-center pt-5">
+                  <div class="col-12 col-md-2">
+                    <h6 class="text-uppercase font-weight-bold mt-4 mt-md-0">
+                      <a href="https://github.com/nickola23" target="_blank" class="text-white text-decoration-none">about us</a>
+                    </h6>
+                  </div>
+                  <div class="col-12 col-md-2">
+                    <h6 class="text-uppercase font-weight-bold mt-4 mt-md-0">
+                      <a href="https://apod.nasa.gov/apod/astropix.html" target="_blank" class="text-white text-decoration-none">resources</a>
+                    </h6>
+                  </div>
+                  <div class="col-12 col-md-2">
+                    <h6 class="text-uppercase font-weight-bold mt-4 mt-md-0">
+                      <a href="https://api.nasa.gov/" target="_blank" class="text-white text-decoration-none">nasa`s api</a>
+                    </h6>
+                  </div>
+                  <div class="col-12 col-md-2">
+                    <h6 class="text-uppercase font-weight-bold mt-4 mt-md-0">
+                      <a href="https://discord.gg/SfY45wHatm" target="_blank" class="text-white text-decoration-none">Contact</a>
+                    </h6>
+                  </div>
+                </div>
+              </section>
+              <hr class="my-5" />
+              <section class="mb-5 bg-dark">
+                <div class="row d-flex justify-content-center">
+                  <div class="col-12 col-lg-8">
+                    <p>
+                        Project developed for use in schools using the NASA`s API
+                    </p>
+                  </div>
+                </div>
+              </section>
+              <section class="social text-center mb-5 bg-dark">
+                <a href="https://discord.gg/SfY45wHatm" class="text-white me-4 text-decoration-none" target="_blank">
+                    <ion-icon name="logo-discord"></ion-icon>
+                </a>
+              </section>
+            </div>
+            <div class="text-center p-3">
+              ©2022 Copyright:
+              <a class="text-white text-decoration-none" href="https://github.com/nickola23" target="_blank">Nikola Milanovic</a>
+            </div>
+          </footer>
+    </main>
+
+    <script src="/js/script.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
