@@ -12,43 +12,55 @@
 </head>
 <body>
     <nav>
-        <ul class="col-12 d-flex justify-content-around mb-0 p-3 bg-dark text-white">
-            <li class="p-2">
-                <ion-icon name="planet-outline"></ion-icon>
+        <ul class="col-12 d-flex justify-content-around mb-0 p-4 bg-dark text-white">
+            <a href="#sec">
+              <li class="text-uppercase">
+                picture of the day
+              </li>
+            </a>
+            <li class="text-uppercase">
+
             </li>
-            <li class="p-2">
-                ovo
-            </li>
-            <li class="p-2">
-               radi
-            </li>
+            <a href="#sec2">
+              <li class="text-uppercase">
+                choose date
+              </li>
+            </a>
         </ul>
     </nav>
     <main>
-        <header class="col-12 vh-100 d-flex justify-content-around flex-column flex-lg-row">
-            <div class="col-12 col-lg-3 text-uppercase d-flex align-items-center p-4 position-relative">
-                <div class="sun" id="sun"></div>
-                <span class="title">picture of the day</span> 
-            </div>
-            <div class="col-12 col-lg-3 d-flex align-items-center justify-content-center">
-                <img src="/images/img1.png" alt="mars" class="mars">
+        <header class="col-12 d-flex justify-content-between justify-content-xxl-around flex-column flex-xxl-row-reverse">
+            <div class="col-xxl-3 text-uppercase d-flex flex-column align-items-center p-4 position-relative">
+              <div class="sun" id="sun"></div>
+                <span class="title text-center text-xxl-end text-uppercase text-dark">nasa`s astronomy picture</span>
                 <a href="#sec">
-                    <button class="learn-more" id="btn">
-                        <span class="circle" aria-hidden="true">
-                        <span class="icon arrow"></span>
-                        </span>
-                        <span class="button-text">Let's go</span>
-                    </button>
+                  <button class="learn-more d-none d-xxl-inline" id="btn">
+                      <span class="circle" aria-hidden="true">
+                      <span class="icon arrow"></span>
+                      </span>
+                      <span class="button-text">Let's go</span>
+                   </button>
                 </a>
             </div>
+            <div class="col-12 col-xxl-3 d-flex align-items-center justify-content-center">
+              <a href="#sec">
+                <button class="learn-more d-xxl-none" id="btn">
+                    <span class="circle" aria-hidden="true">
+                    <span class="icon arrow"></span>
+                    </span>
+                    <span class="button-text">Let's go</span>
+                </button>
+              </a>
+            </div>
+
         </header>
         <section class="col-12 d-flex justify-content-center position-relative" id="sec">
-            <div class="glass col-10 p-3 text-center">
+            <div class="glass col-10 p-3 text-center m-3">
                     <img src="" alt="" class="col-12 p-3" id="img1">
             </div>
             <div class="jupiter" id="jupiter"></div>
         </section>
-        <section class="col-12 d-flex flex-column flex-lg-row">
+        <section class="col-12 d-flex flex-column flex-lg-row" id="sec2">
             <div class="calendar glass col-12 col-sm-9 col-lg-6 col-xl-5 col-xxl-3 my-5 p-2 mx-auto">
                 <div class="calendar-header d-flex align-items-center justify-content-between p-2">
                     <span class="month-picker px-2" id="month-picker"></span>
@@ -76,7 +88,7 @@
                 </div>
                 <div class="month-list d-grid position-absolute col-12 h-100 top-0"></div>
             </div>
-            <div class="col-10 glass glass-img col-lg-6 my-5 mx-auto">
+            <div class="col-10 col-lg-6 glass glass-img my-5 p-3 mx-auto">
                 <img src="" alt="" class="col-12 p-3" id="img2">
             </div>
         </section>

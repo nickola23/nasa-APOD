@@ -7,7 +7,7 @@ const month_names = ['January', 'February', 'March', 'April', 'May', 'June', 'Ju
 
 window.addEventListener('scroll', function(){
 let value = window.scrollY
-sun.style.top = value * 0.6 + 'px'
+sun.style.top = 0 + value * 0.6 + 'px'
 jupiter.style.bottom = value * -0.3 + 'px'
 })
 
@@ -48,14 +48,7 @@ generateCalendar = (month, year) => {
         day.addEventListener("click", (event) => {
             if(event.target.textContent != ""){
                 console.log(month)
-                pickDay = new Date()
-                console.log(month)
-                pickDay.setFullYear(year)
-                console.log(month)
-                pickDay.setMonth(Number(month))
-                console.log(month)
-                pickDay.setDate(parseInt(event.target.textContent))
-                console.log(pickDay)
+                pickDay = new Date(year, Number(month), parseInt(event.target.textContent))
                 calendar.querySelectorAll(".active").forEach(target => {
                     target.classList.remove("active")
                 })
@@ -121,29 +114,52 @@ document.addEventListener("DOMContentLoaded", () => {
 
 async function change(slika){
     const image = document.getElementById(slika)
-    //image.style.opacity = 0
     const data = await APICall(`https://api.nasa.gov/planetary/apod?api_key=${API_KEY}&&thumbs=true&date=${pickDay.getFullYear()}-${pickDay.getMonth()+1}-${pickDay.getDate()}`)
     console.log(`https://api.nasa.gov/planetary/apod?api_key=${API_KEY}&&thumbs=true&date=${pickDay.getFullYear()}-${pickDay.getMonth()+1}-${pickDay.getDate()}`)
     const src = data.media_type === "video" ? data.thumbnail_url : data.hdurl || data.url
     image.src = src
-    //image.style.opacity = 1
 }
 change("img1")
-/*async function change(URL)
-{
-    try{
-        console.log(`https://api.nasa.gov/planetary/apod?api_key=${API_KEY}&&thumbs=true&date=${currDate.getFullYear()}-${currDate.getMonth()+1}-${currDate.getDay()+1}`)
-        const res = await fetch(URL)
-        if(!res.ok) throw new Error("Error while gathering data");
-        const data = await res.json()
-        const image = document.getElementById("img2")
-        const src = data.media_type === "video" ? data.thumbnail_url : data.hdurl || data.url
-        image.src = src
+
+function setImageDimensions()
+{   
+    console.log("hello")
+    const slika = document.getElementById("img1")
+    const img = new Image()
+    img.src = slika.src
+    const ratio = `${img.width} / ${img.height}`
+    const imgLandscape = (img.width > img.height)
+    slika.style.aspectRatio = ratio;
+    if(imgLandscape)
+    {
+        slika.style.width = "100%"
+        slika.style.height = `calc(${slika.style.width} / ${ratio})`
     }
-    catch(error){
-        console.log(error)
+    else
+    {
+        slika.style.height = "100%"
+        slika.style.width = `calc(${slika.style.height} / ${ratio})`
     }
 }
-document.addEventListener("DOMContentLoaded", () => {
-    change(`https://api.nasa.gov/planetary/apod?api_key=${API_KEY}&&thumbs=true&date=${currDate.getFullYear()}-${currDate.getMonth()+1}-${currDate.getDay()+1}`)
-})*/
+document.getElementById("img1").onclick = () => {
+    setImageDimensions()
+}
+console.log(window.screen.width)
+/*function imgOK(img) {
+    if (!img.complete) {
+        return false;
+    }
+    if (typeof img.naturalWidth != "undefined" && img.naturalWidth == 0) {
+        return false;
+    }
+    return true;
+}
+
+function loading(img) {
+    if(imgOK(img)){
+        img.style.opacity = 1
+    }
+    else{
+        img.style.opacity = 0
+    }
+}*/

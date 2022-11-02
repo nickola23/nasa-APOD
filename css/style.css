@@ -9,15 +9,38 @@ html{
 body{
     background-color: #22333b;
 }
-nav{
-    font-family: poppins, sans-serif;
+header{
+    background-image: url(/images/img5.png);
+    background-position: center;
+    background-size: contain;
+    background-position-x: left;
+    background-repeat: no-repeat;
+    background-color: #fff;
 }
+nav ul a{
+    position: relative;
+    font-family: poppins, sans-serif;
+    text-decoration: none;
+}
+nav ul li::after{
+    content: '';
+    height: 3px;
+    width: 0;
+    background: #fff;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    transition: 0.5s;
+}
+nav ul li:hover::after{
+    width: 100%;
+} 
 header{
     font-family: kanit, sans-serif;
     align-items: center;
-    font-size: 76px;
+    font-size: 64px;
     font-weight: 600;
-    background-color: #22333b;
+    min-height: 90vh;
 }
 nav ul li{
     list-style: none;
@@ -30,18 +53,23 @@ nav ul li{
     border: 1px solid rgba( 255, 255, 255, 0. 18) ;
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37) ;
 }
+.glass-img{
+    height: fit-content;
+    min-height: 440px;
+}
 .title{
     z-index: 99;
 }
 .sun{
     z-index: 1;
     top: 0px;
-    left: -150px;
-    width:300px;
-    height:300px;
+    right: -150px;
+    width: 250px;
+    height: 250px;
     border-radius: 50%;
     position: absolute;
-    background: linear-gradient(to top left,red, yellow);
+    background-image: url(/images/img3.jpg);
+    background-position: center;
     box-shadow: 2px 2px 10px black;
 }
 .mars{
@@ -52,7 +80,7 @@ nav ul li{
     right: -350px;
 }
 .jupiter{
-    z-index: 1;
+    z-index: 0;
     bottom: 0px;
     right: 45%;
     width: 450px;
@@ -62,14 +90,12 @@ nav ul li{
     background: linear-gradient(to top left, rgb(170, 83, 1) 0%, rgba(226,144,35,1) 48%, rgb(250, 157, 51) 100%);
 }
 section{
-    background-color: #22333B;
     height: fit-content;
 }
-.glass-img{
-    height: fit-content;
+#sec{
+    background: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(255,255,255,0.5662640056022409) 35%, rgba(224,210,35,0) 100%);
 }
 #img1{
-    width: 100%;
     max-height: 100vh;
     border-radius: 30px;
 }
@@ -174,6 +200,9 @@ button:hover .button-text {
 .calendar-days {
     grid-template-columns: repeat(7, 1fr);
 }
+.calendar-day-hover{
+    transition: all 0.2s ease-in-out;
+}
 .calendar-day-hover:hover{
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0));
     backdrop-filter: blur(10px) ;
@@ -201,6 +230,7 @@ button:hover .button-text {
 .month-picker {
     border-radius: 10px;
     cursor: pointer;
+    transition: all 0.2s ease-in;
 }
 .month-picker:hover {
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0));
@@ -215,6 +245,7 @@ button:hover .button-text {
     border-radius: 50%;
     place-items: center;
     cursor: pointer;
+    transition: all 0.2s ease-in-out;
 }
 .year-change:hover {
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0));
@@ -259,7 +290,7 @@ button:hover .button-text {
     place-items: center;
 }
 .month-list > div > div {
-    padding: 20px;
+    padding: 15px;
     border-radius: 10px;
     text-align: center;
     cursor: pointer;
@@ -271,8 +302,8 @@ button:hover .button-text {
     border-radius: 10px;
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37) ;
 }
-.footer{
-    z-index: 999;
+footer{
+    position: relative;
 }
 footer .social{
     font-size: 38px;
