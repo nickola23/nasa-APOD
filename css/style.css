@@ -31,7 +31,7 @@ nav ul li:hover::after{
     width: 100%;
 }
 header{
-    background-image: url(/images/img5.png);
+    background-image: url(../images/img5.png);
     background-position: center;
     background-size: contain;
     background-position-x: left;
@@ -48,6 +48,7 @@ header span{
 #title{
     font-family: kanit, sans-serif;
     font-weight: 600;
+    height: 10%;
 }
 section{
     height: fit-content;
@@ -70,9 +71,6 @@ section{
     height: auto;
     border-radius: 30px;
 }
-#title{
-    height: 10%;
-}
 .glass{
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
     backdrop-filter: blur(10px) ;
@@ -93,16 +91,9 @@ section{
     height: 250px;
     border-radius: 50%;
     position: absolute;
-    background-image: url(/images/img3.jpg);
+    background-image: url(../images/img3.jpg);
     background-position: center;
     box-shadow: 2px 2px 10px black;
-}
-.mars{
-    position: absolute;
-    height: 1000px;
-    width: 1000px;
-    top: 100px;
-    right: -350px;
 }
 .jupiter{
     z-index: 0;
@@ -112,11 +103,10 @@ section{
     height: 450px;
     border-radius: 50%;
     position: absolute;
-    background-image: url(/images/img6.png);
+    background-image: url(../images/img6.png);
     background-position: center;
 }
 button {
-    position: relative;
     cursor: pointer;
     outline: none;
     border: 0;
@@ -131,8 +121,6 @@ button.learn-more {
 }
 button.learn-more .circle {
     transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
-    position: relative;
-    display: block;
     margin: 0;
     width: 3rem;
     height: 3rem;
@@ -193,7 +181,6 @@ button:hover .button-text {
 }
 .calendar {
     border-radius: 30px;
-    position: relative;
     height: fit-content;
 }
 .calendar-header {
